@@ -11,4 +11,57 @@ In the example provided, the VPN overrides the default route, directing outgoing
 The gist demonstrates how to create a TUN interface and override the default route to route all packets through it. This is an essential step in establishing a VPN connection using an IP tunnel.
 In summary, creating an IP tunnel for a VPN connection involves setting up TUN or TAP interfaces, routing outgoing packets through the tunnel, and directing incoming packets to their original destinations. By doing so, the VPN provides a secure communication channel between two networks or devices, allowing users to access resources as if they were directly connected to the private network.
 
+
 ![image](https://github.com/SavvyChic42/VPN-App/assets/151141927/7a2129ca-94ee-4d4f-a3cf-99aa227f655f)
+
+![image](https://github.com/SavvyChic42/VPN-App/assets/151141927/b52ca9e6-d8e7-401b-94f1-ec9e25784833)
+
+mport tkinter as tk
+from tkinter import messagebox
+
+
+def connect_to_vpn():
+    server_address = entry_server.get()
+    username = entry_username.get()
+    password= entry_password.get()
+
+
+    if server_address and username and password:
+        # simulate a connection to VPN Serever
+        messagebox.showinfo("Connected","Connected to VPN Server")
+    else:
+        messagebox.showerror("Error","Please fill in all the fields")
+
+#create the main window
+root = tk.Tk()
+root.title("VPN")
+
+# server addressen
+label_server = tk.Label(root,text="Server Address")
+label_server.pack()
+entry_server = tk.Entry(root)
+entry_server.pack()
+
+#Username
+label_username = tk.Label(root,text="Username")
+label_username.pack()
+entry_username = tk.Entry(root)
+entry_username.pack()
+
+#Password
+label_password = tk.Label(root,text="Password")
+label_password.pack()
+entry_password = tk.Entry(root,show="*")
+entry_password.pack()
+
+#connect the button
+connect_button = tk.Button(root, text="Connect", command=connect_to_vpn)
+connect_button.pack()
+
+#run the main loop
+root.mainloop()
+
+
+
+
+
