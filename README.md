@@ -16,7 +16,7 @@ In summary, creating an IP tunnel for a VPN connection involves setting up TUN o
 
 ![image](https://github.com/SavvyChic42/VPN-App/assets/151141927/b52ca9e6-d8e7-401b-94f1-ec9e25784833)
 
-mport tkinter as tk
+import tkinter as tk
 from tkinter import messagebox
 
 
